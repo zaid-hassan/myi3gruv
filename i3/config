@@ -208,17 +208,18 @@ bindsym $mod+Shift+Tab workspace prev
 # Application shortcuts
 bindsym $mod+c exec --no-startup-id code
 bindsym $mod+x exec --no-startup-id nautilus
-bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+b exec --no-startup-id chromium
+
 
 exec --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id  ~/.config/polybar/launch.sh
 exec_always --no-startup-id compton --vsync opengl-swc --backend glx
-bindsym $mod+ctrl+l exec --no-startup-id i3lock
+bindsym  $mod+Ctrl+l exec --no-startup-id i3lock -i ~/.i3/leaf-wallpaper-lock.png -e -f
 exec --no-startup-id nitrogen --restore
 
 #Screenshots in files
-bindsym Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
-bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
+bindsym $mod+Print exec --no-startup-id maim --format=png "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-all.png"
+bindsym $mod+Shift+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-current.png"
 bindsym Shift+Print exec --no-startup-id maim --format=png --select "/home/$USER/Pictures/screenshot-$(date -u +'%Y%m%d-%H%M%SZ')-selected.png"
 
 ## Screenshots in clipboards
